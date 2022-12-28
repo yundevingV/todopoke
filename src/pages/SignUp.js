@@ -5,7 +5,7 @@ const ContainerWrapper = styled.div`
 height: 100vh;
 `
 const Container = styled.div`
-width : 40%;
+width : 40vh;
 height : fit-content;
 margin : 0 auto;
 margin-top : 2rem ;
@@ -36,15 +36,6 @@ display: inline-block;
 padding: 1rem;
 width: 100%;
 margin-bottom : ${(props) => props.marginBottom};
-
-${(props) =>
-    props.Submit &&
-    css`
-    padding: 0rem;
-    width: 90%;
-    display:flex;
-    padding: 1rem;
-    `}
 
 ${(props) =>
     props.Success &&
@@ -215,7 +206,7 @@ function SignUp(){
                 <Input placeholder='이름을 입력하세요.' />
             </Wrapper>
 
-            <Wrapper Submit>
+            <Wrapper>
                 <Input placeholder='전화번호를 입력하세요.' />
             </Wrapper>
 
