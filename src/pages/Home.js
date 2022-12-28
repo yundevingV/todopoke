@@ -7,7 +7,8 @@ function Home(){
     return(
         <div>
             <Link to='/SignUp' >
-                SignUp
+                
+                SignUp(회원가입) 페이지로 이동
             </Link>
         </div>
 
