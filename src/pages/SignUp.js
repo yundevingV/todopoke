@@ -6,7 +6,7 @@ height: 100vh;
 `
 const Container = styled.div`
 width : 40%;
-height : 70%;
+height : fit-content;
 margin : 0 auto;
 margin-top : 2rem ;
 background : #FFFFFF;
