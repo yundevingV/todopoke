@@ -4,6 +4,7 @@ import SignUp from './pages/SignUp/SignUp'
 import Home from './pages/Home/Home'
 
 import Header from './pages/header/Header'
+
 function App() {
   return (
     <Routes>
@@ -12,6 +13,8 @@ function App() {
           
           {/* 테스트 */}
           <Route path="/Header" element={<Header />} />
+          
+
     </Routes>
   );
 }

@@ -27,13 +27,12 @@ export default function Menu(){
 }
 
 const MenuCotainer = styled.div`
-background: #FFFFFF;
 
-float : right;
+
+
 `
 
 const IconWrapper = styled.div`
-display : inline-block;
 
 
 `

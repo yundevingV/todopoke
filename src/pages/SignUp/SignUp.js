@@ -1,5 +1,9 @@
 import React , {useState , useCallback} from "react";
+
+// 라이브러리
 import styled , {css} from "styled-components";
+import Axios from "axios";
+
 
 const ContainerWrapper = styled.div`
 height: 100vh;
@@ -10,7 +14,7 @@ height : fit-content;
 margin : 0 auto;
 margin-top : 2rem ;
 background : #FFFFFF;
-border : 3px solid #146132;
+border : 3px solid #00a6ff;
 `
 
 const Title = styled.div`
@@ -60,50 +64,20 @@ height : 3rem;
 width : 70%;
 font-weight : bold;
 
-${(props) =>
-    props.OverLap &&
-    css`
-    color: #9ED6C0;
-    background: #FFFFFF;
-    border: 4px solid #9ED6C0;
-    width: 25%;
-    &:hover{
-        color: #FFFFFF;
-        background: #9ED6C0;
-        border: 1px solid #FFFFFF;
-        transition: 0.3s;
-    }
-    `}
-
-${(props) =>
-    props.Submit &&
-    css`
-    color: #9ED6C0;
-    background: #FFFFFF;
-    border: 4px solid #9ED6C0;
-    width: 25%;
-
-    &:hover{
-        color: #FFFFFF;
-        background: #9ED6C0;
-        border: 1px solid #FFFFFF;
-        transition: 0.3s;
-    }
-    `}
 
 ${(props) =>
     props.Success &&
     css`
     width: 100%;
-    color: #9ED6C0;
+    color: #000000;
     background: #FFFFFF;
-    border: 4px solid #9ED6C0;
+    border : 0.1px 0px 0px 0px solid #000000;
+    
     
 
     &:hover{
         color: #FFFFFF;
-        background: #9ED6C0;
-        border: 1px solid #FFFFFF;
+        background: #000000;
         transition: 0.3s;
     }
     `}
@@ -162,7 +136,15 @@ function SignUp(){
     }
     },
     [password])
+    Axios.defaults.withCredentials = true; // withCredentials 전역 설정
 
+    const submit = () => {
+        Axios.get("http://localhost:8000/", {}).then(() => {
+            alert("등록 완료!")
+        },
+        
+        );
+    };
 
     return(
     <>
@@ -211,7 +193,9 @@ function SignUp(){
             </Wrapper>
 
             <Wrapper Success>
-                <Button Success> 회원가입하기 </Button>
+                <Button 
+                    Success
+                    onClick={()=>submit()}> 회원가입하기 </Button>
             </Wrapper>
 
         </Container>

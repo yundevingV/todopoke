@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../../font/Font.css"
 // 라이브러리
 import {Link} from "react-router-dom"
 import styled from "styled-components";
@@ -10,8 +10,9 @@ import Menu from "./Menu"
 export default function Header(){
     return(
         <HeaderContainer>
-            Todo Poke !
-
+            <Title>
+                Todo Poke !
+            </Title>
             <SignUpButton>
                 <SignUpButtonLink to='/SignUp' >
                     Sign Up
@@ -33,23 +34,28 @@ export default function Header(){
     )
 }
 
-const MenuContainer = styled.div`
 
-position : absolute;
-top : 15vh;
-right : 5vh;
+
+export const fontsize = {
+    titleFontsize: '40px'
+}
+
+const Title = styled.span`
+
+font-family : "todopokeFont";
+font-size : ${fontsize.titleFontsize};
 
 `
 
 const HeaderContainer = styled.div`
-    width: 100%;
-    height : 10vh;
+    width: 95vw;
+    height : 7vh;
     background : #00a6ff;
 
-    padding : 2vh;
+    padding : 2rem;
 
     position : relative;
-    
+    //특정 높이나 넓이 넘으면 정적 사이즈로 변경
 `
 
 const SignUpButton = styled.button`
@@ -101,5 +107,13 @@ float : right;
 const LoginButtonLink = styled(Link)`
 color: black;
 text-decoration : none;
+
+`
+
+const MenuContainer = styled.div`
+
+position : absolute;
+top : 15vh;
+right : 1.5vw;
 
 `
