@@ -4,12 +4,17 @@ import React , {useState , useCallback} from "react";
 import styled , {css} from "styled-components";
 import Axios from "axios";
 
+// 컴포넌트
+import Header from '../header/Header'
 
 const ContainerWrapper = styled.div`
 height: 100vh;
+
+position: relative;
+top : 5vh;
 `
 const Container = styled.div`
-width : 40vh;
+width : 400px;
 height : fit-content;
 margin : 0 auto;
 margin-top : 2rem ;
@@ -149,6 +154,8 @@ function SignUp(){
     return(
     <>
     <ContainerWrapper>
+        
+
         <Container>
             <Title>
                 회원가입

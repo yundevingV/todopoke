@@ -37,7 +37,8 @@ export default function Header(){
 
 
 export const fontsize = {
-    titleFontsize: '40px'
+    titleFontsize: '40px',
+    
 }
 
 const Title = styled.span`
