@@ -22,7 +22,7 @@ display : inline-block;
 float:right;
 margin-left: 10vw;
 
-background: #ffd7e2;
+background: #FFFFFF;
 
 border-radius : 2rem;
 box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
