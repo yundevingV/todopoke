@@ -2,3 +2,8 @@
     font-family: "todopokeFont";         
     src: url("./PuradakGentleGothic.ttf"); 
   }
+
+@font-face {
+    font-family: "todoListFont";         
+    src: url("./LINE_Seed_Sans_KR/TTF/LINESeedKR-Rg.ttf"); 
+  }

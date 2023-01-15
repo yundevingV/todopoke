@@ -65,11 +65,17 @@ export default function Poke(){
                 <StatusWrapper>
                     
                     <Level>
-                    레벨 : {level}  
+                        레벨 :
+                        <LevelBold>
+                            {level}  
+                        </LevelBold>
                     </Level>
 
                     <Level>
-                     경험치 : {getExp} {(getExp / mod * 100).toFixed(3) }%
+                        경험치 : 
+                        <LevelBold>
+                            {getExp} {(getExp / mod * 100).toFixed(3) }%
+                        </LevelBold>
                     </Level>
                 </StatusWrapper>
 
@@ -102,14 +108,15 @@ height : 5vh;
 
 color : black;
 
-border-bottom: 1px dotted black;
 
 `
 
 const NameFontSize = {
-    pokeFontsize: '20px'
+    pokeFontsize: '25px'
 }
 const Name = styled.span`
+font-weight : 1000;
+
 font-size : ${NameFontSize.pokeFontsize};
 
 `
@@ -142,6 +149,11 @@ top : 50vh;
 
 const Level = styled.span`
 padding : 0.5rem;
+`
+
+const LevelBold = styled.span`
+padding : 0.5rem;
+font-weight : 1000;
 `
 
 

@@ -45,7 +45,7 @@ const Title = styled.span`
 
 font-family : "todopokeFont";
 font-size : ${fontsize.titleFontsize};
-
+font-weight : 1000;
 `
 
 const HeaderContainer = styled.div`
