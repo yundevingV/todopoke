@@ -1,7 +1,9 @@
-import React from 'react';
+import React , {useState} from 'react';
+import { useDispatch, useSelector } from "react-redux";
 
 import styled from "styled-components";
 
+import {add} from "../../modules/todo"
 
 export default function TodoModal(props) {
 
@@ -14,16 +16,32 @@ let dateType = props.dateType
 let scoreList = []
 
 if (dateType === 'Daily'){
-  scoreList=[1,2,4,5]
+  scoreList=['점수',1,2,4,5]
 }
 
 if (dateType === 'Weekly'){
-  scoreList=[10,20,30,40,50]
+  scoreList=['점수',10,20,30,40,50]
 }
 
 if (dateType === 'Monthly'){
-  scoreList=[100,200,300,400,500]
+  scoreList=['점수',100,200,300,400,500]
 }
+
+const [selected , setSelected] = useState('')
+
+const handleSelect = (e) =>{
+  setSelected(e.target.value)
+}
+
+const [target , setTarget] = useState('')
+
+const handleTarget = (e) => {
+  setTarget(e.target.value)
+}
+
+// 리덕스
+
+const dispatch = useDispatch()
 
 return (
     <ModalWrapper>
@@ -41,7 +59,9 @@ return (
             <Title>
               목표를 입력해주세요.
             </Title>
-            <Input>
+            <Input 
+              onChange={handleTarget}
+              value={target}>
 
             </Input>
             
@@ -52,7 +72,7 @@ return (
               점수를 선택해주세요.
             </Title>
 
-            <Select>  
+            <Select onChange={handleSelect} value={selected}>  
               {scoreList.map((item) => (
                     <Option value={item} key={item}>
                       {item}
@@ -62,13 +82,21 @@ return (
           </ScoreWrapper>
           
           <SubmitWrapper>
-            <SubmitButton>
-              등록하기
+            <SubmitButton
+              onClick={()=>{
+              dispatch
+              (add(target,selected,dateType))
+              closeModal()
+              
+              }}>
+
+              등록하기 
             </SubmitButton>
           </SubmitWrapper>
-
         </ModalBody>
+
     </ModalWrapper>
+    
   )
 }
 

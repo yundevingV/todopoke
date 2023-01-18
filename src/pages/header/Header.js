@@ -13,17 +13,28 @@ export default function Header(){
             <Title>
                 Todo Poke !
             </Title>
-            <SignUpButton>
-                <SignUpButtonLink to='/SignUp' >
-                    Sign Up
-                </SignUpButtonLink>
-            </SignUpButton>
 
-            <LoginButton>
-                <LoginButtonLink to='/Login' >
-                    Login
-                </LoginButtonLink>
-            </LoginButton>
+            <ButtonWrapper>
+
+                <LoginButton>
+                    <LoginButtonLink to='/Login' >
+                        <LoginSpan>
+                            Login
+                        </LoginSpan>
+                    </LoginButtonLink>
+                </LoginButton>
+
+                <SignUpButton>
+                    <SignUpButtonLink to='/SignUp' >
+                        <SignUpSpan>
+                            Sign Up
+                        </SignUpSpan>
+                        
+                    </SignUpButtonLink>
+                </SignUpButton>
+
+
+            </ButtonWrapper>
 
         <MenuContainer>
             <Menu />
@@ -59,25 +70,20 @@ const HeaderContainer = styled.div`
     //특정 높이나 넓이 넘으면 정적 사이즈로 변경
 `
 
+const ButtonWrapper = styled.div`
+float: right;
+`
 const SignUpButton = styled.button`
-width : 7vh;
-height: 5vh;
+width : 90px;
+height: 30px;
 
-background: #FFFFFF;
-color : #00a6ff;
-border : 1px dashed black;
+background: transparent;
 
-margin : 1vh;
-margin-right : 3vh;
-
+margin : 10px;
 float : right;
 
-&:hover{
-        color: #FFFFFF;
-        background: #00a6ff;
-        border : 3px dashed black;
-        transition: 0.5s;
-    }
+border: 0px;
+
 `
 
 const SignUpButtonLink = styled(Link)`
@@ -87,20 +93,19 @@ text-decoration : none;
 `
 
 const LoginButton = styled.button`
-width : 7vh;
-height: 5vh;
+width : 90px;
+height: 30px;
 
-background: #FFFFFF;
-color : #00a6ff;
-border : 1px dashed black;
-
-margin : 1vh;
+background: #00a6ff;
+color : #FFFFFF;
+border : 1px solid black;
+border-radius : 15px;
+margin : 10px;
 
 float : right;
 &:hover{
-        color: #FFFFFF;
-        background: #00a6ff;
-        border : 3px dashed black;
+        color: #000000;
+        background: #FFFFFF;
         transition: 0.5s;
     }
 
@@ -108,6 +113,17 @@ float : right;
 const LoginButtonLink = styled(Link)`
 color: black;
 text-decoration : none;
+
+`
+const SignUpSpan = styled.span`
+
+&:hover{
+        color: #FFFFFF;
+    }
+`
+
+const LoginSpan = styled.span`
+
 
 `
 
